@@ -7,7 +7,7 @@
     <title>Using Heroku Postgres DB locally in PHP</title>
 
     <link rel="icon" href="https://jitendrazaa.com/favicon.ico" type="image/x-icon" />
-    
+     
     <!-- Latest compiled and minified CSS & JS -->
     <link rel="stylesheet" media="screen" href="//netdna.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
     <script src="//code.jquery.com/jquery.js"></script>

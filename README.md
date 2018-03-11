@@ -1,28 +1,25 @@
-# PHP Docker with SSL
+# Accessing Heroku Postgres Database from local PHP
 
-#### A simple docker configuration to use PHP with HTTPS for development
+## Prerequisite 
+In Order to use Heroku from local PHP server, it must be *ssl* enabled. [Dcoker](https://github.com/JitendraZaa/heroku-postgres-local-php/blob/master/Dockerfile) file contains all needed configuration to spin off self signed ssl PHP server with Postgres extension.
 
-This is a simple Dockerfile that uses the PHP-Apache image and creates a self
-signed certificate to enable the default SSL. This is suitable for development
-and testing, not for production.
-
-## Usage
-
-Download the repository and use the docker compose to build and run the
-container:
-
-###### Build container
+## Steps
+1. Install Docker
+2. Clone [this](https://github.com/JitendraZaa/heroku-postgres-local-php) repository on your local system 
+3. Create an application in [Heroku](https://dashboard.heroku.com/apps) and enable Postgres SQL addon
+4. Copy `DataBase_URL` config variable from Settings section of your Heroku app
+5. Update `$dbconn` variable in [index.php][https://github.com/JitendraZaa/heroku-postgres-local-php/blob/master/src/index.php] file as by copied value. Make sure to extract host, port, dbname, user & password. 
+6. Run below command in terminal so that docker can install all the dependencies
 ```
-sudo docker-compose build
+docker-compose build
 ```
-###### Run container
+7. Now start docker using below command
 ```
-sudo docker-compose up
+docker-compose up
 ```
 
 After you run the command above you should be able to access http://localhost
 and https://localhost
-
-
-Alternatively you can directly download the Dockerfile and the php.ini to build
-the image (you may adjust the php.ini to your needs).
+ 
+#### Thanks
+* [nezhar][https://github.com/nezhar]
