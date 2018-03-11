@@ -21,5 +21,5 @@ docker-compose up
 After you run the command above you should be able to access http://localhost
 and https://localhost
  
-#### Thanks
+### Thanks
 * [nezhar](https://github.com/nezhar) for Docker configurations of self signed SSL PHP Server
